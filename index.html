@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | Roguelikedemo</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
+</head>
+
+<body>
+  <div class="webgl-content">
+    <div id="gameContainer" style="width: 960px; height: 600px"></div>
+    <div class="footer">
+      <div class="webgl-logo"></div>
+      <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+      <div class="title">Roguelikedemo</div>
+    </div>
+  </div>
+  <script src="lib/WebModule.js"></script>
+  <script src="lib/WebAudio.js"></script>
+  <script>
+    var gameInstance = null;
+    WebAudio.init(function (audioContext) { // @arg AudioContext|null
+      if (WebAudio.ready) {
+        window.WEBAUDIO = {
+          audioInstances: [],
+          audioContext: {},
+          audioWebEnabled: 0
+        };
+        window.WEBAUDIO.audioContext = WebAudio.ctx;
+        window.WEBAUDIO.audioWebEnabled = 1;
+        gameInstance = UnityLoader.instantiate("gameContainer", "Build/rougue_webgl_build_f.json", { onProgress: UnityProgress });
+      } else {
+        alert("WebAudio not function");
+      }
+    }, document.body);
+  </script>
+</body>
+
+</html>
