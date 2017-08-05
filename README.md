@@ -2,7 +2,7 @@
 
 this is a fork from unity tutorial [2d-roguelike](https://unity3d.com/jp/learn/tutorials/projects/2d-roguelike-tutorial)
 
-I add a ios webgl support using webaudio hack*1 and lib*2 and my hack*3 to this unity game 
+I add a ios webgl support using webaudio hack (see * 1) and lib(see * 2) and my hack(see * 3) to this unity game 
 
 run the game by click [https://rawgit.com/chooaya/roguelike_forked_for_webgl/master/index.html](https://rawgit.com/chooaya/roguelike_forked_for_webgl/master/index.html) 
 
