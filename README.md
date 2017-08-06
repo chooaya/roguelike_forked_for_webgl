@@ -170,28 +170,3 @@ function _JS_Sound_Init() {
  }
 }
 ```
-
-if you gzip your game and cannot modify *.asm.framework.unityweb file ,try below code
-
- change UnityLoader.js(function:processAsmFrameworkJob)
-before
-```js
-  processAsmFrameworkJob: function (Module, job) {
-    UnityLoader.loadCode(UnityLoader.Job.result(Module, "downloadAsmFramework"), function (id) {
-      UnityLoader[id](Module);
-      job.complete();
-    }, { Module: Module, url: Module["asmFrameworkUrl"] });
-
-  },
-```
-to the after code
-```js
-  processAsmFrameworkJob: function (Module, job) {
-    UnityLoader.loadCode(UnityLoader.Job.result(Module, "downloadAsmFramework"), function (id) {
-      UnityLoader[id](Module);
-      Module.asmLibraryArg._JS_Sound_Init = function _JS_Sound_Init() { WEBAudio = window.WEBAUDIO };
-      job.complete();
-    }, { Module: Module, url: Module["asmFrameworkUrl"] });
-
-  },
-```

@@ -94,7 +94,6 @@ var UnityLoader = UnityLoader || {
   processAsmFrameworkJob: function (Module, job) {
     UnityLoader.loadCode(UnityLoader.Job.result(Module, "downloadAsmFramework"), function (id) {
       UnityLoader[id](Module);
-      Module.asmLibraryArg._JS_Sound_Init = function _JS_Sound_Init() { WEBAudio = window.WEBAUDIO };
       job.complete();
     }, { Module: Module, url: Module["asmFrameworkUrl"] });
 
