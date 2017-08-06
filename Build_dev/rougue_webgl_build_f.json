@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "rougue_webgl_build_f.data.unityweb",
+"asmCodeUrl": "rougue_webgl_build_f.asm.code.unityweb",
+"asmMemoryUrl": "rougue_webgl_build_f.asm.memory.unityweb",
+"asmFrameworkUrl": "rougue_webgl_build_f.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
